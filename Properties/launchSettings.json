@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "libVLCsolution": {
+      "commandName": "Project",
+      "commandLineArgs": null
+    },
+    "GodotDebug": {
+      "commandName": "Executable",
+      "commandLineArgs": "--path.--verbose",
+      "executablePath": "D:\\godot544\\godot.windows.editor.x86_64.mono.exe",
+      "workingDirectory": "."
+    }
+  }
+}

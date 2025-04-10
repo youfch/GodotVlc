@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1cv4e2mchug6"]
+
+[ext_resource type="Texture2D" uid="uid://dfcevcv4hfj1q" path="res://Images/blue_boxCheckmark.png" id="1_h7wwx"]
+[ext_resource type="Script" uid="uid://cugy67vdx1ug3" path="res://Scripts/App.cs" id="1_i37vw"]
+[ext_resource type="Texture2D" uid="uid://dwxvua7wa2a3s" path="res://Images/grey_box.png" id="2_coq2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kr4t"]
+bg_color = Color(0.666667, 0.858824, 0.913725, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltayn"]
+bg_color = Color(0.411765, 0.682353, 0.756863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e66kt"]
+bg_color = Color(0.729412, 0.541176, 0.882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6o6r"]
+
+[sub_resource type="Theme" id="Theme_vf8ju"]
+Button/colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 72
+Button/styles/hover = SubResource("StyleBoxFlat_3kr4t")
+Button/styles/normal = SubResource("StyleBoxFlat_ltayn")
+Button/styles/pressed = SubResource("StyleBoxFlat_e66kt")
+CheckBox/colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+CheckBox/icons/checked = ExtResource("1_h7wwx")
+CheckBox/icons/unchecked = ExtResource("2_coq2a")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_c6o6r")
+LineEdit/font_sizes/font_size = 32
+RichTextLabel/colors/default_color = Color(0.2, 0.2, 0.2, 1)
+RichTextLabel/colors/font_outline_color = Color(0.2, 0.2, 0.2, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.2, 0.2, 0.2, 1)
+RichTextLabel/font_sizes/bold_font_size = 22
+RichTextLabel/font_sizes/normal_font_size = 24
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("Play", "PauseContinue", "Progress", "VidPathEdit", "videoDisplay", "PlaybackSpeed")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vf8ju")
+script = ExtResource("1_i37vw")
+Play = NodePath("Play")
+PauseContinue = NodePath("PauseContinue")
+Progress = NodePath("Options/Progress")
+VidPathEdit = NodePath("Options/VidPath")
+videoDisplay = NodePath("TextureRect")
+PlaybackSpeed = NodePath("OptionButton")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270222, 0.270222, 0.270222, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00347222
+anchor_top = 0.791667
+anchor_right = 0.0642361
+anchor_bottom = 0.871914
+theme_override_font_sizes/font_size = 30
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseContinue" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0677083
+anchor_top = 0.791667
+anchor_right = 0.166667
+anchor_bottom = 0.871914
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "Pause"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="."]
+self_modulate = Color(1, 1, 1, 0.45098)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.172743
+anchor_top = 0.791667
+anchor_right = 0.269097
+anchor_bottom = 0.871914
+theme_override_font_sizes/font_size = 30
+item_count = 1
+popup/item_0/text = "Testw"
+popup/item_0/id = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.882716
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VidPath" type="LineEdit" parent="Options"]
+layout_mode = 2
+placeholder_text = "Video Path"
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Progress" type="HSlider" parent="Options"]
+layout_mode = 2
+step = 0.1
+
+[connection signal="pressed" from="Play" to="." method="StartVideo"]
